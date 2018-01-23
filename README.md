@@ -1,3 +1,3 @@
 # SHOPPING LIST EXAMPLE APP
 
-v.01
+* v.01
