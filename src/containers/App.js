@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-
-import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import ProductsContainer from './ProductsContainer';
+import AddProduct from './AddProductContainer';
 import './App.css';
-import ProductList from './components/ProductList';
 
-const items = ["one", "two", "three"];
 
 class App extends Component {
   render() {
@@ -14,7 +12,8 @@ class App extends Component {
           <div className="col">
           </div>
           <div className="col-3">
-            <ProductList items={items}/>
+            <AddProduct />
+            <ProductsContainer />
           </div>
           <div className="col">
           </div>

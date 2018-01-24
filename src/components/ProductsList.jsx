@@ -5,8 +5,8 @@ class ProductList extends Component {
   render() {
     return(
       <ul className="list-group">
-        {this.props.items.map((item, index) => {
-          return <li className="list-group-item" key={index}>{item}</li>
+        {this.props.items.reverse().map((item) => {
+          return <li className="list-group-item" key={item.id} onClick={() => this.props.onClickProduct(item.id)}>{item.name}</li>
         })}
       </ul>
     )
@@ -14,7 +14,8 @@ class ProductList extends Component {
 }
 
 ProductList.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.array.isRequired,
+  onClickProduct: PropTypes.func.isRequired
 };
 
 export default ProductList;
