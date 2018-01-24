@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 class ProductList extends Component {
   render() {
     return(
-      <ul>
+      <ul className="list-group">
         {this.props.items.map((item, index) => {
-          return <li key={index}>{item}</li>
+          return <li className="list-group-item" key={index}>{item}</li>
         })}
       </ul>
     )
