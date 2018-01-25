@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import shoppingListApp from './reducers'
+import './animate.css';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import App from './containers/App'

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
+
 import { addProduct } from '../actions'
 
 let AddProduct = ({ dispatch }) => {
@@ -18,16 +19,16 @@ let AddProduct = ({ dispatch }) => {
           input.value = ''
         }}
       >
-        <div className="col">
+        <div className="col-sm-9 col-md-9 d-flex justify-content-start">
           <input className="form-control"
             ref={node => {
               input = node
             }}
           />
         </div>
-        <div className="col">  
+        <div className="col-sm-3 col-md-3 d-flex justify-content-end">  
           <button type="submit" className="btn btn-outline-primary">
-            Add Product
+            Add
           </button>
         </div>
       </form>
