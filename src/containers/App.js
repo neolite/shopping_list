@@ -13,6 +13,9 @@ class App extends Component {
           </div>
           <div className="col-3">
             <AddProduct />
+            <div className="row">
+              <div className="w-100"></div>
+            </div>
             <ProductsContainer />
           </div>
           <div className="col">

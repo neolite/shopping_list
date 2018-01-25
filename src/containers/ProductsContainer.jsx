@@ -15,7 +15,7 @@ class ProductsContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    products: state.products.filter(item => !item.completed)//getVisibleTodos(state.todos, state.visibilityFilter)
+    products: state.products.sort((a,b) => a.id - b.id)//.filter(item => !item.completed)//getVisibleTodos(state.todos, state.visibilityFilter)
   }
 }
 
@@ -27,12 +27,10 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-
 const ProductsContainerWithState = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ProductsContainer)
-
 
 ProductsContainer.propTypes = {
   products: PropTypes.array.isRequired,

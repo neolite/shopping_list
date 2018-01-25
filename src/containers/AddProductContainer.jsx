@@ -8,7 +8,7 @@ let AddProduct = ({ dispatch }) => {
 
   return (
     <div>
-      <form
+      <form className="form-row"
         onSubmit={e => {
           e.preventDefault()
           if (!input.value.trim()) {
@@ -18,14 +18,18 @@ let AddProduct = ({ dispatch }) => {
           input.value = ''
         }}
       >
-        <input
-          ref={node => {
-            input = node
-          }}
-        />
-        <button type="submit">
-          Add Product
-        </button>
+        <div className="col">
+          <input className="form-control"
+            ref={node => {
+              input = node
+            }}
+          />
+        </div>
+        <div className="col">  
+          <button type="submit" className="btn btn-outline-primary">
+            Add Product
+          </button>
+        </div>
       </form>
     </div>
   )
