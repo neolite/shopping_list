@@ -6,6 +6,7 @@
     "babel-eslint": "^8.2.1",
     "bootstrap": "4.0.0",
     "classnames": "^2.2.5",
+    "date-fns": "^1.29.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",

@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
+import * as dateFns from "date-fns";
+// import distanceInWords from "date-fns/distance_in_words"; 
 class ProductItem extends Component {
 
   render() {
     const itemClass = cn({
-      'list-group-item': true,
-      'list-group-item-action': true,
-      'flex-column': true,
-      'align-items-start':true,
-      'active': this.props.item.completed
-    })
+      "list-group-item": true,
+      "list-group-item-action": true,
+      "flex-column": true,
+      "align-items-start": true,
+      active: this.props.item.done
+    });
 
     return <li key={this.props.item.id} className={itemClass}>
         <div className="d-flex w-100 justify-content-between">
@@ -19,7 +21,9 @@ class ProductItem extends Component {
               4
             </span>
           </h5>
-          <small>3 days ago</small>
+          <small>
+            {dateFns.distanceInWords(Date.now(), this.props.item.id)}
+          </small>
         </div>
         <p>
           <span className="badge badge-light">14</span>
