@@ -1,16 +1,22 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from "redux";
+import { save, load } from "redux-localstorage-simple";
 import shoppingListApp from './reducers'
 import './animate.css';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import App from './containers/App'
 
-let store = createStore(shoppingListApp, 
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const createStoreWithMiddleware  = applyMiddleware(save())(createStore);
+
+const store = createStoreWithMiddleware(
+  shoppingListApp,
+   load(),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  // Loading done here
+);    
 
 render(
   <Provider store={store}>

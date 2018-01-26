@@ -1,36 +1,36 @@
 import * as types from '../actions/types';
 
 const initialState = [
-  {
-    name: "Banana",
-    id: 1516951569602,
-    done: false,
-    count: 1
-  },
-  {
-    name: "Grapefruit",
-    id: 1516951570480,
-    done: false,
-    count: 1
-  },
-  {
-    name: "Orange",
-    id: 1516951571140,
-    done: false,
-    count: 1
-  },
-  {
-    name: "Apple",
-    id: 1516951571876,
-    done: false,
-    count: 1
-  },
-  {
-    name: "Milk",
-    id: 1516951573315,
-    done: false,
-    count: 1
-  }
+  // {
+  //   name: "Banana",
+  //   id: 1516951569602,
+  //   done: false,
+  //   count: 1
+  // },
+  // {
+  //   name: "Grapefruit",
+  //   id: 1516951570480,
+  //   done: false,
+  //   count: 1
+  // },
+  // {
+  //   name: "Orange",
+  //   id: 1516951571140,
+  //   done: false,
+  //   count: 1
+  // },
+  // {
+  //   name: "Apple",
+  //   id: 1516951571876,
+  //   done: false,
+  //   count: 1
+  // },
+  // {
+  //   name: "Milk",
+  //   id: 1516951573315,
+  //   done: false,
+  //   count: 1
+  // }
 ];
 
 const products = (state = initialState, action) => {
