@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { completeProduct } from '../actions/index';
+import {
+  completeProduct,
+  increaseProductCount,
+  decreaseProductCount
+} from "../actions/index";
 import ProductList from '../components/ProductsList';
 
 
 class ProductsContainer extends Component {
   render() {
-    return(
-      <ProductList items={this.props.products} onClickProduct={this.props.setComplete}/>
-    )
+    return <ProductList items={this.props.products} onClickProduct={this.props.setComplete} onIncreaseCount={this.props.increaseCount} onDecreaseCount={this.props.decreaseCount} />;
   }
 }
 
@@ -23,7 +25,13 @@ const mapDispatchToProps = dispatch => {
   return {
     setComplete: id => {
       dispatch(completeProduct(id))
-    }
+    },
+    increaseCount: id => {
+      dispatch(increaseProductCount(id))
+    },
+    decreaseCount: id => {
+      dispatch(decreaseProductCount(id))
+    },
   }
 }
 
@@ -34,7 +42,9 @@ const ProductsContainerWithState = connect(
 
 ProductsContainer.propTypes = {
   products: PropTypes.array.isRequired,
-  setComplete: PropTypes.func.isRequired
+  setComplete: PropTypes.func.isRequired,
+  increaseCount: PropTypes.func.isRequired,
+  decreaseCount: PropTypes.func.isRequired
 };
 
 export default ProductsContainerWithState;

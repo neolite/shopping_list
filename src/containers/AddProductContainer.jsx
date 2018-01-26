@@ -36,15 +36,19 @@ class AddProduct extends Component {
             <div className="col-sm-9 col-md-9 d-flex justify-content-start">
               {this.props.categories.map(cat => {
                  return <div key={cat.id} className="form-check form-check-inline">
-                    <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                    <label className="form-check-label" htmlFor="inlineRadio1">
-                      {cat.emodzi}
-                      <div className="tooltip bs-tooltip-top" role="tooltip">
-                        <div className="arrow" />
-                        <div className="tooltip-inner">{cat.name}</div>
-                      </div>
-                    </label>
-                  </div>;
+                     <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                     <label className="form-check-label" htmlFor="inlineRadio1">
+                       <span role="img" aria-label={cat.name}>
+                         {cat.emodzi}
+                       </span>
+                       <div className="tooltip bs-tooltip-top" role="tooltip">
+                         <div className="arrow" />
+                         <div className="tooltip-inner">
+                           {cat.name}
+                         </div>
+                       </div>
+                     </label>
+                   </div>;
                 })}
             </div>
           </div>

@@ -13,7 +13,10 @@ class ProductList extends Component {
           transitionLeaveTimeout={300}
         >
           {this.props.items.reverse().map(item => {
-            return <ProductItem item={item} key={item.id} onClickItem={this.props.onClickProduct} />;
+            return <ProductItem item={item} key={item.id} 
+            onClickItem={this.props.onClickProduct} 
+            increaseProduct={this.props.onIncreaseCount} 
+            decreaseProduct={this.props.onDecreaseCount} />;
           })}
         </ReactCSSTransitionGroup>
       </ul>;
@@ -22,7 +25,9 @@ class ProductList extends Component {
 
 ProductList.propTypes = {
   items: PropTypes.array.isRequired,
-  onClickProduct: PropTypes.func.isRequired
+  onClickProduct: PropTypes.func.isRequired,
+  onIncreaseCount: PropTypes.func.isRequired,
+  onDecreaseCount: PropTypes.func.isRequired,
 };
 
 export default ProductList;

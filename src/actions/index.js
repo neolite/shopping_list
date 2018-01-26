@@ -21,3 +21,17 @@ export const completeProduct = id => {
     id
   }
 }
+
+export const increaseProductCount = id => {
+  return {
+    type: types.INCREASE_PRODUCT_COUNT,
+    id
+  }
+}
+
+export const decreaseProductCount = id => {
+  return {
+    type: types.DECREASE_PRODUCT_COUNT,
+    id
+  }
+}
