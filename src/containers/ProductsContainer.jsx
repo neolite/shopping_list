@@ -11,7 +11,7 @@ import ProductList from '../components/ProductsList';
 
 class ProductsContainer extends Component {
   render() {
-    return <ProductList items={this.props.products} onClickProduct={this.props.setComplete} onIncreaseCount={this.props.increaseCount} onDecreaseCount={this.props.decreaseCount} />;
+    return <ProductList items={this.props.products} onCompleteProduct={this.props.setComplete} onIncreaseCount={this.props.increaseCount} onDecreaseCount={this.props.decreaseCount} />;
   }
 }
 
@@ -22,17 +22,14 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return {
-    setComplete: id => {
-      dispatch(completeProduct(id))
-    },
-    increaseCount: id => {
-      dispatch(increaseProductCount(id))
-    },
-    decreaseCount: id => {
-      dispatch(decreaseProductCount(id))
-    },
-  }
+  return { setComplete: id => {
+      dispatch(completeProduct(id));
+    }, increaseCount: id => {
+      dispatch(increaseProductCount(id));
+    }, decreaseCount: id => {
+      dispatch(decreaseProductCount(id));
+    } 
+  };
 }
 
 const ProductsContainerWithState = connect(

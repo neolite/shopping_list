@@ -13,9 +13,8 @@ const createStoreWithMiddleware  = applyMiddleware(save())(createStore);
 
 const store = createStoreWithMiddleware(
   shoppingListApp,
-   load(),
+  load(),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  // Loading done here
 );    
 
 render(
