@@ -8,16 +8,21 @@ import {
 } from "../actions/index";
 import ProductList from '../components/ProductsList';
 
-
 class ProductsContainer extends Component {
   render() {
-    return <ProductList items={this.props.products} onCompleteProduct={this.props.setComplete} onIncreaseCount={this.props.increaseCount} onDecreaseCount={this.props.decreaseCount} />;
+    return <ProductList 
+    items={this.props.products} 
+    categories={this.props.categories}
+    onCompleteProduct={this.props.setComplete} 
+    onIncreaseCount={this.props.increaseCount} 
+    onDecreaseCount={this.props.decreaseCount} />;
   }
 }
 
 const mapStateToProps = state => {
   return {
-    products: state.products.sort((a,b) => a.id - b.id)//.filter(item => !item.completed)//getVisibleTodos(state.todos, state.visibilityFilter)
+    products: state.products.sort((a,b) => a.id - b.id),//.filter(item => !item.completed)//getVisibleTodos(state.todos, state.visibilityFilter)
+    // categories: state.categories
   }
 }
 

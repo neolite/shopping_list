@@ -34,22 +34,7 @@ class AddProduct extends Component {
           </div>
           <div className="flex categories-wrapper">
             <div className="col-sm-9 col-md-9 d-flex justify-content-start">
-              {this.props.categories.map(cat => {
-                 return <div key={cat.id} className="form-check form-check-inline">
-                     <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                     <label className="form-check-label" htmlFor="inlineRadio1">
-                       <span role="img" aria-label={cat.name}>
-                         {cat.emodzi}
-                       </span>
-                       <div className="tooltip bs-tooltip-top" role="tooltip">
-                         <div className="arrow" />
-                         <div className="tooltip-inner">
-                           {cat.name}
-                         </div>
-                       </div>
-                     </label>
-                   </div>;
-                })}
+
             </div>
           </div>
         </form>
@@ -57,22 +42,16 @@ class AddProduct extends Component {
   }   
 }
 
-
-const mapStateToProps = state => {
-  return { categories: state.categories.sort((a, b) => a.id - b.id) };
-};
-
 const mapDispatchToProps = dispatch => {
   return { addProduct: value => {
       dispatch(addProduct(value));
     } };
 };
 
-const AddProductWithState = connect(mapStateToProps, mapDispatchToProps)(AddProduct);
+const AddProductWithState = connect(null, mapDispatchToProps)(AddProduct);
 
 AddProduct.propTypes = {
-  addProduct: PropTypes.func.isRequired,
-  categories: PropTypes.array.isRequired
+  addProduct: PropTypes.func.isRequired
 };
 
 export default AddProductWithState;
