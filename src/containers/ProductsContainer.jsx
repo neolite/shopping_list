@@ -7,23 +7,26 @@ import {
   decreaseProductCount
 } from "../actions/index";
 import ProductList from '../components/ProductsList';
+import AddProduct from "./AddProduct";
 
 class ProductsContainer extends Component {
   render() {
-    return <ProductList 
-    items={this.props.products} 
-    categories={this.props.categories}
-    onCompleteProduct={this.props.setComplete} 
-    onIncreaseCount={this.props.increaseCount} 
-    onDecreaseCount={this.props.decreaseCount} />;
+    return <div>
+        <AddProduct list={this.props.currentList}/>
+        <div className="row">
+          <div className="w-100" />
+        </div>
+        <ProductList items={this.props.products} list={this.props.currentList} onCompleteProduct={this.props.setComplete} onIncreaseCount={this.props.increaseCount} onDecreaseCount={this.props.decreaseCount} />
+      </div>
   }
 }
 
 const mapStateToProps = state => {
-  return {
-    products: state.products.sort((a,b) => a.id - b.id),//.filter(item => !item.completed)//getVisibleTodos(state.todos, state.visibilityFilter)
-    // categories: state.categories
-  }
+  const currentList = state.lists.filter(l => l.active)[0];
+  return { products: state.products
+      .filter(p => p.list_id === currentList.id)
+      .sort((a, b) => a.id - b.id), // categories: state.categories //.filter(item => !item.completed)//getVisibleTodos(state.todos, state.visibilityFilter)
+    currentList };
 }
 
 const mapDispatchToProps = dispatch => {
@@ -37,13 +40,13 @@ const mapDispatchToProps = dispatch => {
   };
 }
 
-const ProductsContainerWithState = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ProductsContainer)
+const ProductsContainerWithState = connect(mapStateToProps, mapDispatchToProps)(
+  ProductsContainer
+);
 
 ProductsContainer.propTypes = {
   products: PropTypes.array.isRequired,
+  currentList: PropTypes.object.isRequired,
   setComplete: PropTypes.func.isRequired,
   increaseCount: PropTypes.func.isRequired,
   decreaseCount: PropTypes.func.isRequired

@@ -1,11 +1,7 @@
 import * as types from "./types";
 
-export const addProduct = name => {
-  return {
-    type: types.ADD_PRODUCT,
-    id: Date.now(),
-    name
-  };
+export const addProduct = (name, list_id) => {
+  return { type: types.ADD_PRODUCT, id: Date.now(), name, list_id };
 };
 
 export const setVisibilityFilter = filter => {

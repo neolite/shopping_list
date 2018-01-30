@@ -1,3 +1,7 @@
 #root {
   margin-top: 20px;
 }
+
+#product-list, #shopping-lists {
+  padding-top: 10px;
+}

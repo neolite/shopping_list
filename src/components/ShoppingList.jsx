@@ -15,15 +15,18 @@ class ShoppingList extends Component {
       "align-items-center": true,
       active: item.active
     });  
-
     return <li key={item.id} href="#" className={className} onClick={() => this.props.onSetActiveList(item.id)}>
-          {item.name}
-          <span className="badge badge-primary badge-pill">2</span>
-        </li>;
+        {item.name}
+        <span className="badge badge-primary badge-pill">
+          {item.products.length}
+        </span>
+      </li>;
     });
 
     return <ReactCSSTransitionGroup transitionName={{ enter: "animated", enterActive: "bounceIn", leave: "animated", leaveActive: "bounceOutDown" }} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-        <ul className="list-group">{menuItems}</ul>
+        <ul className="list-group" id="shopping-lists">
+          {menuItems}
+        </ul>
       </ReactCSSTransitionGroup>;
   }
 }

@@ -8,6 +8,7 @@ import './ProductList.css';
 
 class ProductList extends Component {
   render() {
+    const { list } = this.props;
     const items = this.props.items.reverse().map(item => {
                   const itemClass = cn({
                     "list-group-item": true,
@@ -36,24 +37,23 @@ class ProductList extends Component {
                         </span>
                       </p>
                       <div className="d-flex justify-content-around">
-                        <button type="button" className="btn-outline-secondary col" onClick={() => this.props.onDecreaseCount(item.id)}>
+                        <button type="button" className="btn-outline-secondary col" onClick={() => this.props.onDecreaseCount(item.id, list.id)}>
                           <span role="img" aria-label="Minus">
                             ➖
                           </span>
                         </button>
-                        <button type="button" className="btn-outline-primary col" onClick={() => this.props.onIncreaseCount(item.id)}>
+                        <button type="button" className="btn-outline-primary col" onClick={() => this.props.onIncreaseCount(item.id, list.id)}>
                           <span role="img" aria-label="Plus">
                             ➕
                           </span>
                         </button>
                         <small className="col" />
-                        <button type="button" className="btn-outline-primary col" onClick={() => this.props.onCompleteProduct(item.id)}>
+                        <button type="button" className="btn-outline-primary col" onClick={() => this.props.onCompleteProduct(item.id, list.id)}>
                           <span role="img" aria-label="Complete">
                             ✔️
                           </span>
                         </button>
                       </div>
-    
                     </li>;
                     }
                   );
@@ -68,6 +68,7 @@ class ProductList extends Component {
 
 ProductList.propTypes = {
   items: PropTypes.array.isRequired,
+  list: PropTypes.object.isRequired,
   onIncreaseCount: PropTypes.func.isRequired,
   onDecreaseCount: PropTypes.func.isRequired,
   onCompleteProduct: PropTypes.func.isRequired
