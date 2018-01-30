@@ -11,7 +11,7 @@ export const addList = name => {
 
 export const archiveList = id => {
   return {
-    type: types.DELETE_LIST,
+    type: types.ARCHIVE_LIST,
     id
   };
 };

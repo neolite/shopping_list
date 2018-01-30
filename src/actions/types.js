@@ -7,5 +7,5 @@ export const COMPLETE_PRODUCT = 'COMPLETE_PRODUCT';
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
 export const ADD_LIST = "ADD_LIST";
-export const DELETE_LIST = "DELETE_LIST";
+export const ARCHIVE_LIST = "ARCHIVE_LIST";
 export const SET_LIST_ACTIVE = "SET_LIST_ACTIVE";

@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addList, archiveList, setActiveList } from "../actions/index";
+import {
+  addList,
+  archiveList,
+  setActiveList
+} from "../actions/index";
 import ShoppingLists from "../components/ShoppingList";
 import AddList from "./AddList";
 
@@ -17,7 +21,7 @@ class ListsContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    lists: state.lists.sort((a, b) => b.id - a.id).map(el => { 
+    lists: state.lists.filter(l => !l.archive).sort((a, b) => b.id - a.id).map(el => { 
       return Object.assign(
         el, 
         { products: state.products.filter(p => p.list_id === el.id)}
@@ -35,7 +39,7 @@ const mapDispatchToProps = dispatch => {
     },
     addList: value => {
       dispatch(addList(value));
-    } 
+    },
   };
 };
 

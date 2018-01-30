@@ -1,4 +1,8 @@
-import {addList, archiveList, setActiveList} from './lists';
+import {
+  addList,
+  archiveList,
+  setActiveList
+} from "./lists";
 import {
   addProduct,
   decreaseProductCount,

@@ -16,10 +16,20 @@ class ShoppingList extends Component {
       active: item.active
     });  
     return <li key={item.id} href="#" className={className} onClick={() => this.props.onSetActiveList(item.id)}>
-        {item.name}
-        <span className="badge badge-primary badge-pill">
-          {item.products.length}
-        </span>
+        <div className="col">
+          {item.name} &nbsp;
+          <span className="badge badge-danger badge-pill">
+            {item.products.length}
+          </span>
+        </div>
+        <div className="d-flex justify-content-around">
+          <div className="col-4" />
+          <button type="button" className="btn-outline-success" onClick={() => this.props.onArchiveList(item.id)}>
+            <span role="img" aria-label="Complete">
+              ✔️
+            </span>
+          </button>
+        </div>
       </li>;
     });
 
@@ -33,7 +43,8 @@ class ShoppingList extends Component {
 
 ShoppingList.propTypes = {
   items: PropTypes.array.isRequired,
-  onSetActiveList: PropTypes.func.isRequired
+  onSetActiveList: PropTypes.func.isRequired,
+  onArchiveList: PropTypes.func.isRequired
 };
 
 export default ShoppingList;
