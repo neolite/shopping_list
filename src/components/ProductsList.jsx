@@ -66,7 +66,7 @@ class ProductList extends Component {
 
 ProductList.propTypes = {
   items: PropTypes.array.isRequired,
-  list: PropTypes.object.isRequired,
+  list: PropTypes.object,
   onIncreaseCount: PropTypes.func.isRequired,
   onDecreaseCount: PropTypes.func.isRequired,
   onCompleteProduct: PropTypes.func.isRequired

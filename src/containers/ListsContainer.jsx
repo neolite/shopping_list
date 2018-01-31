@@ -7,7 +7,7 @@ import {
   setActiveList
 } from "../actions/index";
 import ShoppingLists from "../components/ShoppingList";
-import AddList from "./AddList";
+import AddList from "../components/AddList";
 
 class ListsContainer extends Component {
   render() {

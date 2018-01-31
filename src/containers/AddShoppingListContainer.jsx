@@ -5,9 +5,6 @@ import PropTypes from "prop-types";
 import { addProduct } from "../actions";
 
 class AddProduct extends Component {
-  componentDidMount() {
-    // console.warn(this.props.categories);
-  }
 
   onSubmit = e => {
     e.preventDefault();
