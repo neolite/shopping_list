@@ -16,7 +16,8 @@ let addListComponent = ({ dispatch }) => {
           input.value = "";
         }}>
         <div className="col-sm-9 col-md-9 d-flex justify-content-start">
-          <input className="form-control" ref={node => {
+          <input className="form-control" placeholder="Type shopping list name"
+           ref={node => {
               input = node;
             }} />
         </div>

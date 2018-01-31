@@ -14,7 +14,9 @@ class ChartsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  const grouppedProducts = _.groupBy(state.products,'name');
+  const active_lists_ids = state.lists.filter(l => !l.archive).map(el => el.id);
+  const available_products = state.products.filter(p => active_lists_ids.includes(p.list_id));
+  const grouppedProducts = _.groupBy(available_products,'name');
   const products = Object.keys(grouppedProducts).map(key => {
     let result = _.reduce(grouppedProducts[key], (acc, el) => {
        return acc + el.count;

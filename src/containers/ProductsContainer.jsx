@@ -23,6 +23,7 @@ class ProductsContainer extends Component {
 
 const mapStateToProps = state => {
   const currentList = state.lists.filter(l => l.active)[0];
+  console.log('currentlist',currentList);
   return { products: state.products
       .filter(p => p.list_id === currentList.id)
       .sort((a, b) => a.id - b.id),

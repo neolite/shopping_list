@@ -5,7 +5,7 @@ const initialState = [
     id: 1,
     name: 'Молоко',
     done: false,
-    count: 1,
+    count: 2,
     list_id: 1
   },
   {
@@ -19,7 +19,7 @@ const initialState = [
     id: 3,
     name: 'Яйца',
     done: false,
-    count: 1,
+    count: 5,
     list_id: 1
   },
   {
@@ -33,7 +33,7 @@ const initialState = [
     id: 5,
     name: 'Салфетки',
     done: false,
-    count: 1,
+    count: 10,
     list_id: 2
   },
 ];

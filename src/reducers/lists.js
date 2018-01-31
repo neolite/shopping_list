@@ -12,7 +12,7 @@ const lists = (state = initialState, action) => {
       return [...state, { id: action.id, name: action.name, active: true, archive: false, count: 1, products: [] }];
     case types.ARCHIVE_LIST:
       state = state.map(list => (list.id === action.id ? { ...list, archive: true, active: false } : list));
-      return state.map((list, i) => (i === 0 ? { ...list, active: true } : list));
+      return state.map((list, i) => (i === 0 && !list.archive ? { ...list, active: true } : list));
     case types.SET_LIST_ACTIVE:
       return state.map(list => (list.id === action.id ? { ...list, active: true } : { ...list, active: false }));
     default:
