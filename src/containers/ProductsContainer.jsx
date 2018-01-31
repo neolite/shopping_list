@@ -14,7 +14,7 @@ class ProductsContainer extends Component {
     return <div>
         {this.props.currentList && <AddProduct list={this.props.currentList} />}
         <div className="row">
-          {!this.props.currentList && <div className="alert alert-primary" role="alert"> Add a shopping list first</div>}
+          {!this.props.currentList && <div className="alert alert-primary" role="alert">Add a shopping list first or select him</div>}
           <div className="w-100" />
         </div>
         <ProductList items={this.props.products} list={this.props.currentList} onCompleteProduct={this.props.setComplete} onIncreaseCount={this.props.increaseCount} onDecreaseCount={this.props.decreaseCount} />

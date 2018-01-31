@@ -3,7 +3,7 @@
 * v. 0.8.5
 
 
-[DEMO](https://build-fkcknzdgko.now.sh)
+[DEMO](https://build-ccpoexwdpt.now.sh)
 
 I create simple shopping list app using create-react-app template.
 
