@@ -1,9 +1,8 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import cn from 'classnames';
 
-import "./ProductList.css";
 
 class ShoppingList extends Component {
   render() {
@@ -15,7 +14,7 @@ class ShoppingList extends Component {
       "align-items-center": true,
       active: item.active
     });  
-    return <li key={item.id} href="#" className={className} onClick={() => this.props.onSetActiveList(item.id)}>
+    return <li key={item.id} className={className} onClick={() => this.props.onSetActiveList(item.id)}>
         <div className="col">
           {item.name} &nbsp;
           <span className="badge badge-danger badge-pill">
@@ -33,11 +32,11 @@ class ShoppingList extends Component {
       </li>;
     });
 
-    return <ReactCSSTransitionGroup transitionName={{ enter: "animated", enterActive: "bounceIn", leave: "animated", leaveActive: "bounceOutDown" }} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-        <ul className="list-group" id="shopping-lists">
+    return <ul className="list-group" id="shopping-lists">
+        <ReactCSSTransitionGroup transitionName={{ enter: "animated", enterActive: "fadeIn", leave: "animated", leaveActive: "fadeOutDown" }} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
           {menuItems}
-        </ul>
-      </ReactCSSTransitionGroup>;
+        </ReactCSSTransitionGroup>
+      </ul>;
   }
 }
 

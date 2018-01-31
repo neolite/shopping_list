@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import cn from "classnames";
-import * as dateFns from "date-fns";
-
-import './ProductList.css';
+import cn from 'classnames';
+import * as dateFns from 'date-fns';
 
 class ProductList extends Component {
   render() {
@@ -59,7 +57,7 @@ class ProductList extends Component {
                   );
 
     return <ul className="list-group" id="product-list">
-        <ReactCSSTransitionGroup transitionName={{ enter: "animated", enterActive: "bounceIn", leave: "animated", leaveActive: "bounceOutDown" }} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+        <ReactCSSTransitionGroup transitionName={{ enter: "animated", enterActive: "fadeIn", leave: "animated", leaveActive: "fadeOut" }} transitionEnterTimeout={500} transitionLeaveTimeout={300}>
           {items}
         </ReactCSSTransitionGroup>
       </ul>;
