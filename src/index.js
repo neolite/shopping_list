@@ -3,8 +3,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from "redux";
-import { save, load } from "redux-localstorage-simple";
+import { createStore, applyMiddleware } from 'redux';
+import { save, load } from 'redux-localstorage-simple';
 import shoppingListApp from './reducers'
 import './animate.css';
 import './index.css';
@@ -13,7 +13,7 @@ import App from './containers/App'
 
 window.Chart = require("chart.js");
 
-const createStoreWithMiddleware  = applyMiddleware(save())(createStore);
+const createStoreWithMiddleware = applyMiddleware(save())(createStore);
 
 const store = createStoreWithMiddleware(
   shoppingListApp,
