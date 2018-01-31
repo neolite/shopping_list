@@ -1,6 +1,42 @@
 import * as types from '../actions/types';
 
-const initialState = [];
+const initialState = [
+  {
+    id: 1,
+    name: 'Молоко',
+    done: false,
+    count: 1,
+    list_id: 1
+  },
+  {
+    id: 2,
+    name: 'Хлеб',
+    done: false,
+    count: 1,
+    list_id: 1
+  },
+  {
+    id: 3,
+    name: 'Яйца',
+    done: false,
+    count: 1,
+    list_id: 1
+  },
+  {
+    id: 4,
+    name: 'Мыло жидкое',
+    done: false,
+    count: 1,
+    list_id: 2
+  },
+  {
+    id: 5,
+    name: 'Салфетки',
+    done: false,
+    count: 1,
+    list_id: 2
+  },
+];
 
 const products = (state = initialState, action) => {
   switch (action.type) {

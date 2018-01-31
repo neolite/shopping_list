@@ -3,7 +3,7 @@
 * v. 0.8
 
 
-DEMO [https://build-qnmixwraxi.now.s](https://build-qnmixwraxi.now.sh)
+DEMO [https://build-qnmixwraxi.now.sh](https://build-qnmixwraxi.now.sh)
 
 I create simple shopping list app using create-react-app template.
 
@@ -12,6 +12,7 @@ USED
   * Redux
   * Lodash
   * Redux simple localstorage
+  * Date-fns
   * Classnames
   * Animate.css
   * React Transitions Group
