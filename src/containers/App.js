@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ProductsContainer from './ProductsContainer';
 import ListsContainer from './ListsContainer';
-
+import ChartContainer from "./ChartContainer";
 import './App.css';
 
 class App extends Component {
@@ -13,6 +13,9 @@ class App extends Component {
           </div>
           <div className="col-4">
             <ProductsContainer />
+          </div>
+          <div className="col-3">
+            <ChartContainer />
           </div>
           <div className="col" />
         </div>

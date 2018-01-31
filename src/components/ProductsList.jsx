@@ -33,7 +33,7 @@ class ProductList extends Component {
                       </div>
                       <p>
                         <span className="badge badge-light">
-                          14
+                          
                         </span>
                       </p>
                       <div className="d-flex justify-content-around">
