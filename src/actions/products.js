@@ -4,13 +4,6 @@ export const addProduct = (name, list_id) => {
   return { type: types.ADD_PRODUCT, id: Date.now(), name, list_id };
 };
 
-export const setVisibilityFilter = filter => {
-  return {
-    type: types.SET_VISIBILITY_FILTER,
-    filter
-  };
-};
-
 export const completeProduct = id => {
   return {
     type: types.COMPLETE_PRODUCT,

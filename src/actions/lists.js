@@ -8,7 +8,6 @@ export const addList = name => {
   };
 };
 
-
 export const archiveList = id => {
   return {
     type: types.ARCHIVE_LIST,
